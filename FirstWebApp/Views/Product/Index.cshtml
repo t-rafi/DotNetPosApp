@@ -1,0 +1,30 @@
+﻿@model List<FirstWebApp.Models.Products>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+<h1>Product List</h1>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>CategoryId</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.SalePrice</td>
+                <td>@item.CategoryId</td>
+            </tr>
+                
+            }
+
+</table>
+

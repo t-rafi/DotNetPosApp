@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Layout.cshtml";
+}
+
+@if (TempData["success"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["success"]
+    </div>
+}
+
+<h1>Catagory List</h1>
+<a asp-controller="Category" asp-action="Create" class="btn btn-outline-primary">Create</a>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.CategoryList)
+        {
+            <tr>
+                <td>@item.CategoryId</td>
+                <td>@item.CategoryName</td>
+                <td><a asp-controller="Category" asp-action="Edit" asp-route-id="@item.CategoryId" class="btn btn-outline-primary"> Edit </a></td>
+                <td>
+                    <a asp-controller="Category"
+                       asp-action="Delete"
+                       asp-route-id="@item.CategoryId"
+                       class="btn btn-outline-danger">
+                        Delete
+                    </a>
+                </td>
+                <td>
+                <td>
+                    <a asp-controller="Category"
+                       asp-action="Details"
+                       asp-route-id="@item.CategoryId"
+                       class="btn btn-outline-info">
+                        Details
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+

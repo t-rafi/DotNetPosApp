@@ -1,0 +1,17 @@
+# Ignore Visual Studio temporary files
+.vs/
+bin/
+obj/
+*.user
+*.suo
+*.log
+
+# ASP.NET Core
+wwwroot/lib/
+node_modules/
+
+# Secret / local environment files
+appsettings.Development.json
+
+# EF Core Migrations (optional)
+Migrations/

@@ -1,10 +1,11 @@
-﻿@model List<FirstWebApp.Models.Products>
+﻿@model List<FirstWebApp.Models.Product>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/_Layout.cshtml";
 }
 
 <h1>Product List</h1>
+<a asp-controller="Product" asp-action="Create" class="btn btn-outline-primary">Create</a>
 <table class="table table-bordered table-hover table-striped">
     <thead>
         <tr>

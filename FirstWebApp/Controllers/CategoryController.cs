@@ -28,9 +28,9 @@ namespace FirstWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(string CategoryName)
+        public IActionResult Create(Category model)
         {
-            Category obj = new Category { CategoryName = CategoryName };
+            Category obj = new Category { CategoryName = model.CategoryName}; 
             _context.Categories.Add(obj);
             _context.SaveChanges();
             TempData["success"] = "Category created successfully!";
@@ -45,17 +45,18 @@ namespace FirstWebApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Category obj)
+        public IActionResult Edit(Category model)
         {
-            _context.Categories.Update(obj);
+            Category obj = new Category { CategoryId = model.CategoryId, CategoryName = model.CategoryName };
+            _context.Categories.Update(model);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(int DltId, string DltNm)
         {
-            var obj = _context.Categories.Find(id);
+            var obj = _context.Categories.Find(DltId);
             return View(obj);
         }
 

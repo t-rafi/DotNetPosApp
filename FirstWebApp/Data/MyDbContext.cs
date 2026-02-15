@@ -12,6 +12,6 @@ namespace FirstWebApp.Data
 
         // DbSet represents a table
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Products> Products { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

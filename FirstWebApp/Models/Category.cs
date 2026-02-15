@@ -10,6 +10,7 @@ namespace FirstWebApp.Models
         public int CategoryId { get; set; }
         public required string CategoryName { get; set; }
 
-        public virtual IEnumerable<Products> Product { get; set; } // Navigation property for related products. IEnumerable use korchi karon ekta category te onek gulo product thakte pare, tai list er moto collection use kora hoyeche.
+        // Navigation property for related products. IEnumerable use korchi karon ekta category te onek gulo product thakte pare, tai list er moto collection use kora hoyeche.
+        public virtual IEnumerable<Product> Product { get; set; } 
     }
 }
